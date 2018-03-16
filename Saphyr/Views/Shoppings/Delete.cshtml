@@ -1,0 +1,89 @@
+﻿@model Saphyr.Models.Shopping
+
+@{
+    ViewBag.Title = "Remover";
+}
+
+<h2>Remover Shopping</h2>
+
+<h4 class="avisoRemover">Tem certeza que deseja remover este Shopping e suas Lojas?</h4>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            Gerente Responsável
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gerente.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AreaTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroPiso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroPiso)
+        </dd>
+
+    </dl>
+
+    <h4>Lojas</h4>
+    <div style="height: 200px; overflow: auto;">
+        <table class="table table-striped table-hover">
+            <thead class="thead-default">
+                <tr>
+                    <th>
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var loja in ViewBag.Lojas)
+                {
+                    <tr>
+                        <td>
+                            @loja.Nome
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </div>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Remover" class="danger btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

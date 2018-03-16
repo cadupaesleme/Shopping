@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Saphyr";
+}
+
+<div id="principal" class="jumbotron">
+    <h2>Saphyr Adm</h2>
+    <p>Aplicação para soluções de shoppings.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Shoppings</h2>
+        <p>
+            Gerencie as informações de shoppings.
+        </p>
+        <p>
+            @Html.ActionLink("Acesse aqui >", "Index", "Shoppings",null ,new { @class = "btn btn-default" })
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Lojas</h2>
+        <p>Gerencie as informações de lojas.</p>
+        <p>
+            @Html.ActionLink("Acesse aqui >", "Index", "Lojas", null, new { @class = "btn btn-default" })
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Gerentes</h2>
+        <p>Gerencie as informações de gerentes.</p>
+        <p>
+            @Html.ActionLink("Acesse aqui >", "Index", "Gerentes", null, new { @class = "btn btn-default" })
+        </p>
+    </div>
+</div>
